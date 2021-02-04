@@ -16,10 +16,10 @@ namespace Bird_Inheritance_Test
         }
 
         //I copied the questions from the Birds class version of this method. I commented out the code about flying since that has been set to true, and I asked a question about the speed.
-        public override void BirdQuiz(Raptors raptors)
+        public override void BirdQuiz(Birds birds)
         {
             Console.WriteLine("What color is your bird?");
-            raptors.Color = Console.ReadLine().ToLower();
+            birds.Color = Console.ReadLine().ToLower();
             //Console.WriteLine("Can your bird fly?");
             //string flightResponse = Console.ReadLine().ToLower();
             //if (flightResponse.Equals("no") || flightResponse.Equals("n"))
@@ -31,13 +31,15 @@ namespace Bird_Inheritance_Test
             //    raptors.Flies = true;
             //}
             Console.WriteLine("What does your bird eat?");
-            raptors.Diet = Console.ReadLine().ToLower();
+            birds.Diet = Console.ReadLine().ToLower();
+
+            Raptors raptors = birds as Raptors;
             Console.WriteLine("How fast is your bird?");
             raptors.Speed = Console.ReadLine().ToLower();
         }
 
         //This version of the BirdStatement method incorporates all of the properties of the Raptors class.
-        public override void BirdStatement(Raptors raptors)
+        public override void BirdStatement(Birds birds)
         {
             Console.WriteLine("O rly?");
             Console.WriteLine($"So it looks like your bird is {Color}, it flies, it eats {Diet}, and it is {Speed}.");

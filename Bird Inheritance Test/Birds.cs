@@ -12,7 +12,7 @@ namespace Bird_Inheritance_Test
         public string Diet { get; set; }
 
         //This method is just to print out the information to the console so that we can verify what was entered was processed correctly
-        public void BirdStatement(Birds birds)
+        public virtual void BirdStatement(Birds birds)
         {
             if (Flies)
             {
@@ -25,7 +25,7 @@ namespace Bird_Inheritance_Test
         }
 
         //This is the original text of the program I ended up shifting over to this method. I think our virtual pet project could become easier if we moved certain sections of code into classes.
-        public void BirdQuiz(Birds birds)
+        public virtual void BirdQuiz(Birds birds)
         {
             Console.WriteLine("What color is your bird?");
             birds.Color = Console.ReadLine().ToLower();
@@ -44,13 +44,13 @@ namespace Bird_Inheritance_Test
         }
 
         //These two methods are just here with a "Raptors" argument so that they can be inherited by the child class.
-        public virtual void BirdQuiz(Raptors raptors)
-        {
+        //public virtual void BirdQuiz(Raptors raptors)
+        //{
 
-        }
-        public virtual void BirdStatement(Raptors raptors)
-        {
+        //}
+        //public virtual void BirdStatement(Raptors raptors)
+        //{
 
-        }
+        //}
     }
 }
